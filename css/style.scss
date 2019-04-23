@@ -1,0 +1,138 @@
+$darkGrey:#0f0f0f;
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import "hamburger";
+
+html, body{
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+color: $darkGrey;
+  padding: 0;
+  margin: 0;
+font-size: 16px;
+
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+header.main {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+}
+
+.mobile_nav {
+  display: none;
+}
+
+ul, li {
+padding: 0;
+margin: 0;
+border: solid black 1px;
+}
+
+li {
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+#nav_primary, #nav_primary*{
+transition: all .2s;
+}
+
+.header_inner {
+  max-width: 1220px;
+  display: flex;
+  margin: 0 auto;
+
+}
+
+.logo{
+  align-self: flex-start;
+  max-width: 20%;
+}
+
+.logo img, .mobile_logo img {
+width: 100%;
+}
+
+.main_menu {
+  margin-left: auto;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.main_menu>li {
+  position: relative;
+  padding: 8px 1rem 7px;
+}
+
+.sub-menu>li{
+  position: relative;
+  padding: 8px .9rem 7px 0;
+}
+
+.sub-menu{
+  display: block;
+  visibility: visible;
+  opacity: 1;
+  position: absolute;
+top: 100%;
+}
+
+.header_wood .sub-menu, .header_gas .sub-menu{
+left: 100%;
+top: -6%;
+}
+
+/*===MobileCSS===*/
+.mobile_logo{
+position: fixed;
+  top: 3rem;
+  right: 2rem;
+width: 30%;
+
+}
+.mobile_nav{
+font-size: 2.4rem;
+ul {
+padding: 1vh;
+border: none;
+
+}
+li {
+padding: .8vh;
+list-style: disc;
+}
+.header_wood, .header_gas{
+list-style: square;
+}
+.mobile_sub-menu{
+font-size: 0.95em;
+}
+}
+
+/*.main_menu li:hover>.sub-menu{
+  display: block;
+  visibility: visible;
+  opacity: 1;
+}*/
+
+
+@import "media";
+
+
+
+
+
+
+
