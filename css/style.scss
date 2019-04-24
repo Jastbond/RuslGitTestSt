@@ -1,15 +1,20 @@
 $darkGrey:#0f0f0f;
+$blue:#396ff9;
+$orange:#f14c1d;
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 @import "hamburger";
+@import "mobile";
 
 html, body{
+
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
 color: $darkGrey;
   padding: 0;
   margin: 0;
 font-size: 16px;
+  overflow-y: hidden;
 
 }
 
@@ -18,13 +23,54 @@ font-size: 16px;
   box-sizing: border-box;
 }
 
-header.main {
+.wrapper {
+  perspective: 1px;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+transition: all .3s;
+}
+.section {
+  position: relative;
+  height: 100vh;
+  font-size: 48px;
+vertical-align: center;
+h1{
+padding-top: 20%;
+}
+h1,h2 {
+margin: 0 auto;
+text-align: center;
+}
+}
+
+.parallax::after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateZ(-1px) scale(2);
+  background-size: 100%;
+  z-index: -1;
+  background: url('../images/warm-house.jpg') center top  no-repeat;
+}
+
+/* === Header CSS === */
+
+
+header {
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 10;
+  transition: .3s all;
 }
 
+.scroll{
+  background-color: #fff;
+}
 .mobile_nav {
   display: none;
 }
@@ -41,6 +87,7 @@ li {
 
 a{
   text-decoration: none;
+cursor: pointer;
 }
 
 #nav_primary, #nav_primary*{
@@ -56,7 +103,7 @@ transition: all .2s;
 
 .logo{
   align-self: flex-start;
-  max-width: 20%;
+  max-width: 25%;
 }
 
 .logo img, .mobile_logo img {
@@ -68,7 +115,6 @@ width: 100%;
   display:flex;
   justify-content: space-between;
   align-items: center;
-
 }
 
 .main_menu>li {
@@ -93,39 +139,85 @@ top: 100%;
 left: 100%;
 top: -6%;
 }
-
-/*===MobileCSS===*/
-.mobile_logo{
-position: fixed;
-  top: 3rem;
-  right: 2rem;
-width: 30%;
-
-}
-.mobile_nav{
-font-size: 2.4rem;
-ul {
-padding: 1vh;
-border: none;
-
-}
-li {
-padding: .8vh;
-list-style: disc;
-}
-.header_wood, .header_gas{
-list-style: square;
-}
-.mobile_sub-menu{
-font-size: 0.95em;
-}
-}
-
 /*.main_menu li:hover>.sub-menu{
   display: block;
   visibility: visible;
   opacity: 1;
 }*/
+
+/* === End of Header CSS === */
+
+/* === Main CSS === */
+.main_wrapper{
+width: 100%;
+  background-color: #fff;
+}
+
+main {
+max-width: 1220px;
+padding: 20px;
+margin: 0 auto;
+  display: grid;
+grid-gap: 1rem;
+  grid-template-rows: repeat(2, 1fr);
+grid-template-columns: repeat(4, 1fr);
+  background-color: #fff;
+}
+
+.production_item{
+  border: 1px solid black;
+text-align: center;
+vertical-align: bottom;
+background: white no-repeat center;
+  background-size: contain;
+max-width: 280px;
+
+}
+
+.production_item a{
+display: flex;
+align-items: flex-end;
+justify-content: center;
+  min-height: 270px;
+padding: 20px;
+}
+
+.main_banner{
+grid-column: 2 / 4;
+max-width: 800px;
+display: flex;
+flex-direction: column;
+justify-content: space-around;
+background-color: $orange;
+color: #fff;
+font-size: 3rem;
+p{
+margin: 0;
+}
+}
+
+.tverd_banner{
+background-image: url("../images/main-tverd-boiler.jpg");
+}
+
+.gas_banner{
+  background-image: url("../images/main-gas-boiler.jpg");
+}
+.el_banner{
+  background-image: url("../images/main-el-bolier.jpg");
+}
+
+.pech_banner{
+  background-image: url("../images/main-pech.jpg");
+}
+
+.delivery_banner{
+  background-image: url("../images/main-dostavka.jpg");
+}
+
+.service_banner{
+  background-image: url("../images/main-warranty.jpg");
+}
 
 
 @import "media";

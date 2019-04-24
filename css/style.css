@@ -1,10 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
-a {
-  text-decoration: none;
+.main_menu a {
   color: #232323;
   transition: color 0.3s ease; }
 
-a:hover {
+.main_menu a:hover {
   color: tomato; }
 
 #menuToggle {
@@ -80,7 +79,7 @@ a:hover {
  * Make this absolute positioned
  * at the top left of the screen
  */
-#menu {
+#mobile_nav {
   position: absolute;
   margin: -100px 0 0 -50px;
   padding: 50px;
@@ -94,8 +93,31 @@ a:hover {
 /*
  * And let's slide it in from the left
  */
-#menuToggle input:checked ~ #menu {
-  transform: none; }
+/*
+#menuToggle input:checked ~#mobile_nav
+{
+  transform: none;
+}*/
+/*===MobileCSS===*/
+.mobile_logo {
+  position: fixed;
+  top: 1rem;
+  right: 2rem;
+  width: 30%; }
+
+#mobile_nav {
+  font-size: 2.4rem;
+  width: 100vw; }
+  #mobile_nav ul {
+    padding: 1vh;
+    border: none; }
+  #mobile_nav li {
+    padding: .8vh;
+    list-style: disc; }
+  #mobile_nav ul.mobile_menu > li {
+    list-style: square; }
+  #mobile_nav .mobile_sub-menu {
+    font-size: 0.95em; }
 
 html, body {
   font-family: "Montserrat", sans-serif;
@@ -103,17 +125,53 @@ html, body {
   color: #0f0f0f;
   padding: 0;
   margin: 0;
-  font-size: 16px; }
+  font-size: 16px;
+  overflow-y: hidden; }
 
 *, *:before, *:after {
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
-header.main {
+.wrapper {
+  perspective: 1px;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  transition: all .3s; }
+
+.section {
+  position: relative;
+  height: 100vh;
+  font-size: 48px;
+  vertical-align: center; }
+  .section h1 {
+    padding-top: 20%; }
+  .section h1, .section h2 {
+    margin: 0 auto;
+    text-align: center; }
+
+.parallax::after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateZ(-1px) scale(2);
+  background-size: 100%;
+  z-index: -1;
+  background: url("../images/warm-house.jpg") center top no-repeat; }
+
+/* === Header CSS === */
+header {
   position: fixed;
   width: 100%;
   top: 0;
-  z-index: 10; }
+  z-index: 10;
+  transition: .3s all; }
+
+.scroll {
+  background-color: #fff; }
 
 .mobile_nav {
   display: none; }
@@ -127,7 +185,8 @@ li {
   list-style: none; }
 
 a {
-  text-decoration: none; }
+  text-decoration: none;
+  cursor: pointer; }
 
 #nav_primary, #nav_primary* {
   transition: all .2s; }
@@ -139,7 +198,7 @@ a {
 
 .logo {
   align-self: flex-start;
-  max-width: 20%; }
+  max-width: 25%; }
 
 .logo img, .mobile_logo img {
   width: 100%; }
@@ -169,31 +228,72 @@ a {
   left: 100%;
   top: -6%; }
 
-/*===MobileCSS===*/
-.mobile_logo {
-  position: fixed;
-  top: 3rem;
-  right: 2rem;
-  width: 30%; }
-
-.mobile_nav {
-  font-size: 2.4rem; }
-  .mobile_nav ul {
-    padding: 1vh;
-    border: none; }
-  .mobile_nav li {
-    padding: .8vh;
-    list-style: disc; }
-  .mobile_nav .header_wood, .mobile_nav .header_gas {
-    list-style: square; }
-  .mobile_nav .mobile_sub-menu {
-    font-size: 0.95em; }
-
 /*.main_menu li:hover>.sub-menu{
   display: block;
   visibility: visible;
   opacity: 1;
 }*/
+/* === End of Header CSS === */
+/* === Main CSS === */
+.main_wrapper {
+  width: 100%;
+  background-color: #fff; }
+
+main {
+  max-width: 1220px;
+  padding: 20px;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  background-color: #fff; }
+
+.production_item {
+  border: 1px solid black;
+  text-align: center;
+  vertical-align: bottom;
+  background: white no-repeat center;
+  background-size: contain;
+  max-width: 280px; }
+
+.production_item a {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  min-height: 270px;
+  padding: 20px; }
+
+.main_banner {
+  grid-column: 2 / 4;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: #f14c1d;
+  color: #fff;
+  font-size: 3rem; }
+  .main_banner p {
+    margin: 0; }
+
+.tverd_banner {
+  background-image: url("../images/main-tverd-boiler.jpg"); }
+
+.gas_banner {
+  background-image: url("../images/main-gas-boiler.jpg"); }
+
+.el_banner {
+  background-image: url("../images/main-el-bolier.jpg"); }
+
+.pech_banner {
+  background-image: url("../images/main-pech.jpg"); }
+
+.delivery_banner {
+  background-image: url("../images/main-dostavka.jpg"); }
+
+.service_banner {
+  background-image: url("../images/main-warranty.jpg"); }
+
 @media only screen and (max-width: 1240px) {
   html, body {
     font-size: 1.5vw; } }
@@ -206,6 +306,9 @@ a {
   .mobile_nav, #menuToggle {
     display: block;
     visibility: visible;
-    opacity: 1; } }
+    opacity: 1; }
+
+  header {
+    height: 80px; } }
 
 /*# sourceMappingURL=style.css.map */

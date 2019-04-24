@@ -1,11 +1,10 @@
-a
+.main_menu a
 {
-  text-decoration: none;
   color: #232323;
   transition: color 0.3s ease;
 }
 
-a:hover
+.main_menu a:hover
 {
   color: tomato;
 }
@@ -100,7 +99,7 @@ a:hover
  * Make this absolute positioned
  * at the top left of the screen
  */
-#menu
+#mobile_nav
 {
   position: absolute;
   margin: -100px 0 0 -50px;
@@ -119,7 +118,8 @@ a:hover
 /*
  * And let's slide it in from the left
  */
-#menuToggle input:checked ~ #menu
+/*
+#menuToggle input:checked ~#mobile_nav
 {
   transform: none;
-}
+}*/
