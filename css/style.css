@@ -249,6 +249,41 @@ a {
   width: 100%;
   background-color: #fff; }
 
+#mouse {
+  position: absolute;
+  width: 24px;
+  height: 33px;
+  left: 50%;
+  bottom: 50px;
+  transform: translateX(-50%);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 13px;
+  background-color: transparent;
+  cursor: pointer;
+  z-index: 1;
+  transition: opacity ease 0.8s; }
+  #mouse i {
+    animation: mouse 1.5s ease-in-out infinite alternate;
+    position: absolute;
+    display: inline-block;
+    width: 2px;
+    height: 8px;
+    left: 11px;
+    top: 6px;
+    background-color: rgba(255, 255, 255, 0.4); }
+
+@keyframes mouse {
+  0% {
+    transform: translateY(0); }
+  100% {
+    transform: translateY(7px); } }
+main:before {
+  display: block;
+  content: " ";
+  margin-top: 140px;
+  height: 140px;
+  visibility: hidden; }
+
 main {
   max-width: 1220px;
   margin: 0 auto; }

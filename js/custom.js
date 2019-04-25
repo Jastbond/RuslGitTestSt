@@ -2,12 +2,15 @@ var header = document.getElementById("header");
 var wrap = document.getElementById("wrapper");
 var mobnav = document.getElementById("mobile_nav");
 var hamb = document.getElementById("menuToggle");
+var mous = document.getElementById("mouse");
 
 function wscroll() {
     if (wrap.scrollTop >= 200) {
         header.classList.add("scroll");
+        mous.style.opacity = "0";
     } else {
         header.classList.remove("scroll");
+        mous.style.opacity = "1";
     }
 }
 
