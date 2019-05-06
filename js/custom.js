@@ -1,4 +1,4 @@
-var header = document.getElementById("header");
+var scrol = document.querySelectorAll(".scro");
 var wrap = document.getElementById("wrapper");
 var mobnav = document.getElementById("mobile_nav");
 var hamb = document.getElementById("menuToggle");
@@ -6,10 +6,11 @@ var mous = document.getElementById("mouse");
 
 function wscroll() {
     if (wrap.scrollTop >= 200) {
-        header.classList.add("scroll");
+        scrol.forEach(el => el.classList.add('scrol'));
+        /*scrol.classList.add("scroll");*/
         mous.style.opacity = "0";
     } else {
-        header.classList.remove("scroll");
+        scrol.forEach(el => el.classList.remove('scrol','scro'));
         mous.style.opacity = "1";
     }
 }

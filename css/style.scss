@@ -2,14 +2,15 @@ $darkGrey:#0f0f0f;
 $blue:#396ff9;
 $orange:#f14c1d;
 $grey:#5E5E5E;
+$greyer:#515151;
 
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:300,400,700|Play:400,700|Rubik:300,400,700&amp;subset=cyrillic');
 @import "hamburger";
 @import "mobile";
 
 html, body{
 
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", "Arial", sans-serif;
   font-weight: 600;
 color: $darkGrey;
   padding: 0;
@@ -19,18 +20,24 @@ font-size: 16px;
 
 }
 
+h1,h2,h3 {
+  text-align: center;
+line-height: 150%;
+font-family: "Rubik", "Arial", sans-serif;
+}
+
 h1{
 font-size: 5rem;
 }
 
 h2{
 font-size: 3rem;
-  text-align: center;
 }
 
 *, *:before, *:after {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  transition: all .3s;
 }
 
 .wrapper {
@@ -38,7 +45,7 @@ font-size: 3rem;
   height: 100vh;
   overflow-x: hidden;
   overflow-y: auto;
-transition: all .3s;
+
   scroll-behavior: smooth;
 }
 .hero {
@@ -51,13 +58,12 @@ padding-top: 20%;
 }
 h1,h2 {
 margin: 0 auto;
-text-align: center;
 text-shadow: 2px 4px 4px $grey;
   color:#fff;
 }
 }
 
-.parallax::after {
+.hero::after {
   content: " ";
   position: absolute;
   top: 0;
@@ -79,9 +85,10 @@ header {
   top: 0;
   z-index: 10;
   transition: .3s all;
+  ul,li {
+  border: none;}
 }
-
-.scroll{
+.scrol{
   background-color: #fff;
 }
 .mobile_nav {
@@ -111,6 +118,7 @@ transition: all .2s;
   max-width: 1220px;
   display: flex;
   margin: 0 auto;
+justify-content: space-between;
 
 }
 
@@ -130,9 +138,28 @@ width: 100%;
   align-items: center;
 }
 
+.main_menu:hover, .main_menu:hover li>ul{
+  background-color: rgba(255,255,255,0.5);
+}
+
+.scrol:hover,.scrol:hover li>ul{
+  background-color: #fff;
+}
+
 .main_menu>li {
   position: relative;
   padding: 8px 1rem 7px;
+}
+
+.main_menu a
+{
+  color: #232323;
+  transition: color 0.3s ease;
+}
+
+.main_menu a:hover, .prod_item_submenu_wrapper a:hover
+{
+  color: $orange;
 }
 
 .sub-menu>li{
@@ -141,29 +168,31 @@ width: 100%;
 }
 
 .sub-menu{
-  display: block;
-  visibility: visible;
-  opacity: 1;
+  visibility: hidden;
+  opacity: 0;
   position: absolute;
 top: 100%;
+transition: all ease .3s;
+padding-left: 1rem;
+margin-left: -.5rem;
 }
 
 .header_wood .sub-menu, .header_gas .sub-menu{
 left: 100%;
-top: -6%;
+top:0;
 }
-/*.main_menu li:hover>.sub-menu{
-  display: block;
+.main_menu li:hover>.sub-menu{
   visibility: visible;
   opacity: 1;
-}*/
+  transition: all ease .3s;
+}
 
 /* === End of Header CSS === */
 
 /* === Main CSS === */
-.main_wrapper{
+main, footer {
 width: 100%;
-  background-color: #fff;
+  background-color: rgba(255,255,255,0.8);
 }
 
 #mouse {
@@ -199,18 +228,19 @@ i {
   }
 }
 
-main:before {
+#production:before {
   display: block;
   content: " ";
-  margin-top: 140px;
-  height: 140px;
+  margin-top: 110px;
+  height: 110px;
   visibility: hidden;
 }
 
 
-main {
+.main_wrapper, .footer_wrapper {
   max-width: 1220px;
   margin: 0 auto;
+padding: 0 1rem;
 }
 
 .production_grid {
@@ -220,11 +250,10 @@ padding: 20px;
 grid-gap: 1rem;
   grid-template-rows: repeat(2, 1fr);
 grid-template-columns: repeat(4, 1fr);
-  background-color: #fff;
 }
 
 .production_item{
-
+  position: relative;
 box-shadow: 5px 6px 7px $grey ;
 text-align: center;
 vertical-align: bottom;
@@ -234,7 +263,7 @@ max-width: 280px;
 
 }
 
-.production_item a{
+.production_item>a{
 display: flex;
 align-items: flex-end;
 justify-content: center;
@@ -242,6 +271,45 @@ justify-content: center;
 padding: 20px;
 color:$blue;
 }
+
+.production_item:hover > .prod_item_submenu_wrapper
+{
+
+  visibility: visible;
+  opacity: 1;
+z-index: 2;
+}
+
+.prod_item_submenu_wrapper {
+  display: flex;
+    visibility: hidden;
+    opacity: 0;
+z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  align-items: center;
+justify-content: center;
+  line-height: 1.5rem;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.57) 0%, rgba(0, 0, 0, 0.88) 76%, rgba(0, 0, 0, 0.89) 77%, rgba(0, 0, 0, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#000000', GradientType=0);
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  li {
+    text-align-last: left;
+    line-height: 3rem;
+    a {
+      color: #fff;
+      transition: color 0.3s ease;
+    }
+
+  }
+}
+
+
 
 .main_banner{
 grid-column: 2 / 4;
@@ -283,6 +351,127 @@ background-image: url("../images/main-tverd-boiler.jpg");
 .intro {
   font-size: 1.5rem;
 }
+
+.intro p{
+font:  400 1.2rem "Roboto", "Arial", sans-serif;
+
+}
+
+
+
+.callback::after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateZ(-1px) scale(2);
+  background-size: 100%;
+  z-index: -2;
+  background: url('../images/warm-house.jpg') center center no-repeat;
+}
+
+.callback {
+  position: relative;
+  height: 100vh;
+  vertical-align: center;
+  background-color:transparent;
+
+}
+
+
+
+.callback_wrapper{
+  display: flex;
+position: relative;
+  background-color: transparent;
+justify-content: space-between;
+
+}
+
+.callback_wrapper:before {
+content: "";
+position: absolute;
+display: block;
+background-color: white;
+left: -40%;
+height: 100%;
+width: 1000%;
+z-index: -1;
+
+}
+
+
+
+
+
+
+
+
+
+
+.feedback{
+  display: flex;
+}
+
+
+
+/* === End of Main CSS === */
+/* === Footer CSS === */
+
+
+
+.footer_wrapper {
+  display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-gap: 1rem ;
+}
+
+
+.footer_logo img{
+width: 80%;
+}
+
+.social li{
+display: inline-block;
+}
+
+.footer_phone, .footer_mail {
+padding-left: 4vw;
+font-size: 1.4rem;
+margin: 4px 0;
+display: inline-block;
+position: relative;
+}
+.footer_phone:before{
+   content: "";
+   display: block;
+   position: absolute;
+   width: 12%;
+   height: 100%;
+   left: 6%;
+   top:4%;
+   background: url(../images/icon-phone-40.png) no-repeat ;
+   -webkit-background-size: contain;
+   background-size: contain;
+ }
+
+.footer_mail:before{
+  content: "";
+  display: block;
+  position: absolute;
+  width: 12%;
+  height: 100%;
+  left: 6%;
+  top:4%;
+  background: url(../images/icon-mail-40.png) no-repeat ;
+  -webkit-background-size: contain;
+  background-size: contain;
+}
+
+
+
 
 
 @import "media";
