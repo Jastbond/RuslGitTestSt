@@ -4,6 +4,7 @@ html,body {font-size: 1.5vw;}
 
 
 @media only screen and (max-width: 768px) and (orientation: portrait){
+
 .nav_primary {
   display: none;
   visibility: hidden;
@@ -51,4 +52,20 @@ padding-right: 2rem;
 .main_banner{
 order: -1;
 }
+
+
+.callback_wrapper {
+  flex-direction: column;
+
+  div {
+    padding: 1rem 0;
+  }
+}
+.callback_ask p:last-child{
+text-align: right;}
+.callback_ask p:nth-child(2){
+text-align: center;
+}
+
+
 }

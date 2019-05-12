@@ -349,14 +349,14 @@ background-image: url("../images/main-tverd-boiler.jpg");
 }
 
 .intro {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
+padding: 3rem 0;
 }
 
 .intro p{
-font:  400 1.2rem "Roboto", "Arial", sans-serif;
+font:  400 1.3rem "Roboto", "Arial", sans-serif;
 
 }
-
 
 
 .callback::after {
@@ -399,23 +399,79 @@ left: -40%;
 height: 100%;
 width: 1000%;
 z-index: -1;
+}
 
+.callback_wrapper>div{
+padding: 4rem 0;
+p{
+margin: 0;
+}
+}
+
+.callback_ask p{
+font-size: 1.5rem;
+line-height: 4rem;
+}
+
+.callback_now p{
+  line-height: 4rem;
+text-align: center;
+&:first-child{
+font-size: 1.7rem;
+
+}
+&:nth-child(2) {
+font-size: 2rem;
+
+}
+  &:last-child {
+font-size: 1.2rem;
+line-height: 2rem;
+}
+
+}
+
+.callback_form{
+  flex-grow: .6;
+}
+
+.callback_form input{
+width: 100%;
+float: right;
+line-height: 3rem;
+margin-bottom: .5rem;
+padding-left: 1rem;
+}
+
+.callback_form input[type="submit"]{
+line-height: 4rem;
+  background:#ccc;
+  border:0 none;
+  cursor:pointer;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+margin-bottom: 0;
 }
 
 
 
-
-
-
-
+.blog_header {
+  text-align: left;
+  font-size: 2rem;
+border-bottom: 2px solid $grey ;
+}
 
 
 
 .feedback{
-  display: flex;
+  display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-column-gap: 2vw;
 }
 
-
+.feedback_post_text{
+  font: 400 1.1rem "Roboto", "Arial", sans-serif;
+}
 
 /* === End of Main CSS === */
 /* === Footer CSS === */

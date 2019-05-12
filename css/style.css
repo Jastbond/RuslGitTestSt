@@ -387,10 +387,11 @@ main, footer {
   background-image: url("../images/main-warranty.jpg"); }
 
 .intro {
-  font-size: 1.5rem; }
+  font-size: 1.6rem;
+  padding: 3rem 0; }
 
 .intro p {
-  font: 400 1.2rem "Roboto", "Arial", sans-serif; }
+  font: 400 1.3rem "Roboto", "Arial", sans-serif; }
 
 .callback::after {
   content: " ";
@@ -426,8 +427,57 @@ main, footer {
   width: 1000%;
   z-index: -1; }
 
+.callback_wrapper > div {
+  padding: 4rem 0; }
+  .callback_wrapper > div p {
+    margin: 0; }
+
+.callback_ask p {
+  font-size: 1.5rem;
+  line-height: 4rem; }
+
+.callback_now p {
+  line-height: 4rem;
+  text-align: center; }
+  .callback_now p:first-child {
+    font-size: 1.7rem; }
+  .callback_now p:nth-child(2) {
+    font-size: 2rem; }
+  .callback_now p:last-child {
+    font-size: 1.2rem;
+    line-height: 2rem; }
+
+.callback_form {
+  flex-grow: .6; }
+
+.callback_form input {
+  width: 100%;
+  float: right;
+  line-height: 3rem;
+  margin-bottom: .5rem;
+  padding-left: 1rem; }
+
+.callback_form input[type="submit"] {
+  line-height: 4rem;
+  background: #ccc;
+  border: 0 none;
+  cursor: pointer;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  margin-bottom: 0; }
+
+.blog_header {
+  text-align: left;
+  font-size: 2rem;
+  border-bottom: 2px solid #5E5E5E; }
+
 .feedback {
-  display: flex; }
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 2vw; }
+
+.feedback_post_text {
+  font: 400 1.1rem "Roboto", "Arial", sans-serif; }
 
 /* === End of Main CSS === */
 /* === Footer CSS === */
@@ -516,6 +566,17 @@ main, footer {
       padding-right: 2rem; }
 
   .main_banner {
-    order: -1; } }
+    order: -1; }
+
+  .callback_wrapper {
+    flex-direction: column; }
+    .callback_wrapper div {
+      padding: 1rem 0; }
+
+  .callback_ask p:last-child {
+    text-align: right; }
+
+  .callback_ask p:nth-child(2) {
+    text-align: center; } }
 
 /*# sourceMappingURL=style.css.map */
