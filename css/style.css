@@ -121,10 +121,13 @@ html, body {
   font-size: 16px;
   overflow-y: hidden; }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
   text-align: center;
   line-height: 150%;
   font-family: "Rubik", "Arial", sans-serif; }
+
+a {
+  color: #3399cc; }
 
 h1 {
   font-size: 5rem; }
@@ -166,7 +169,17 @@ h2 {
   transform: translateZ(-1px) scale(2);
   background-size: 100%;
   z-index: -1;
-  background: url("../images/warm-house.jpg") center center no-repeat; }
+  opacity: 0.8;
+  background: url("../images/ezgif.com-small.gif") center center no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover; }
+
+#hero_logo {
+  text-align: center;
+  padding-top: 50px;
+  opacity: 0; }
+  #hero_logo img {
+    width: 40%; }
 
 /* === Header CSS === */
 header {
@@ -178,16 +191,12 @@ header {
   header ul, header li {
     border: none; }
 
-.scrol {
-  background-color: #fff; }
-
 .mobile_nav {
   display: none; }
 
-ul, li {
+ul, li, menu {
   padding: 0;
-  margin: 0;
-  border: solid black 1px; }
+  margin: 0; }
 
 li {
   list-style: none; }
@@ -195,6 +204,9 @@ li {
 a {
   text-decoration: none;
   cursor: pointer; }
+
+.nav_primary {
+  padding-top: .5rem; }
 
 #nav_primary, #nav_primary* {
   transition: all .2s; }
@@ -209,6 +221,10 @@ a {
   align-self: flex-start;
   max-width: 25%; }
 
+.logo a {
+  height: 100%;
+  display: block; }
+
 .logo img, .mobile_logo img {
   width: 100%; }
 
@@ -216,10 +232,19 @@ a {
   margin-left: auto;
   display: flex;
   justify-content: space-between;
-  align-items: center; }
+  align-items: center;
+  padding-top: .5rem; }
 
 .main_menu:hover, .main_menu:hover li > ul {
   background-color: rgba(255, 255, 255, 0.5); }
+
+.scrol {
+  background-color: #fff; }
+  .scrol li a {
+    color: black; }
+
+header.scrol {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); }
 
 .scrol:hover, .scrol:hover li > ul {
   background-color: #fff; }
@@ -229,11 +254,11 @@ a {
   padding: 8px 1rem 7px; }
 
 .main_menu a {
-  color: #232323;
+  color: white;
   transition: color 0.3s ease; }
 
 .main_menu a:hover, .prod_item_submenu_wrapper a:hover {
-  color: #f14c1d; }
+  color: #ff6633; }
 
 .sub-menu > li {
   position: relative;
@@ -325,7 +350,7 @@ main, footer {
   justify-content: center;
   min-height: 270px;
   padding: 20px;
-  color: #396ff9; }
+  color: #3399cc; }
 
 .production_item:hover > .prod_item_submenu_wrapper {
   visibility: visible;
@@ -362,7 +387,7 @@ main, footer {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  background-color: #f14c1d;
+  background-color: #ff6633;
   color: #fff;
   font-size: 3rem; }
   .main_banner p {
@@ -388,7 +413,7 @@ main, footer {
 
 .intro {
   font-size: 1.6rem;
-  padding: 3rem 0; }
+  padding: 1rem 0; }
 
 .intro p {
   font: 400 1.3rem "Roboto", "Arial", sans-serif; }

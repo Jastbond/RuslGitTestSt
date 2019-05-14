@@ -1,6 +1,6 @@
 $darkGrey:#0f0f0f;
-$blue:#396ff9;
-$orange:#f14c1d;
+$blue:#3399cc;
+$orange:#ff6633;
 $grey:#5E5E5E;
 $greyer:#515151;
 
@@ -20,12 +20,14 @@ font-size: 16px;
 
 }
 
-h1,h2,h3 {
+h1,h2,h3,h4 {
   text-align: center;
 line-height: 150%;
 font-family: "Rubik", "Arial", sans-serif;
 }
-
+a {
+  color: $blue;
+}
 h1{
 font-size: 5rem;
 }
@@ -73,9 +75,20 @@ text-shadow: 2px 4px 4px $grey;
   transform: translateZ(-1px) scale(2);
   background-size: 100%;
   z-index: -1;
-  background: url('../images/warm-house.jpg') center center no-repeat;
+opacity: 0.8;
+  background: url('../images/ezgif.com-small.gif') center center no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
 }
 
+#hero_logo{
+text-align: center;
+padding-top: 50px;
+opacity: 0;
+img {
+width: 40%;
+}
+}
 /* === Header CSS === */
 
 
@@ -87,18 +100,16 @@ header {
   transition: .3s all;
   ul,li {
   border: none;}
+
 }
-.scrol{
-  background-color: #fff;
-}
+
 .mobile_nav {
   display: none;
 }
 
-ul, li {
+ul, li, menu {
 padding: 0;
 margin: 0;
-border: solid black 1px;
 }
 
 li {
@@ -110,6 +121,10 @@ a{
 cursor: pointer;
 }
 
+.nav_primary{
+
+  padding-top: .5rem;
+}
 #nav_primary, #nav_primary*{
 transition: all .2s;
 }
@@ -127,6 +142,11 @@ justify-content: space-between;
   max-width: 25%;
 }
 
+.logo a{
+height: 100%;
+display: block;
+}
+
 .logo img, .mobile_logo img {
 width: 100%;
 }
@@ -136,10 +156,22 @@ width: 100%;
   display:flex;
   justify-content: space-between;
   align-items: center;
+  padding-top: .5rem;
+
 }
 
 .main_menu:hover, .main_menu:hover li>ul{
   background-color: rgba(255,255,255,0.5);
+}
+.scrol{
+  background-color: #fff;
+  li a{
+    color: black;
+  }
+}
+
+header.scrol{
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
 .scrol:hover,.scrol:hover li>ul{
@@ -153,7 +185,7 @@ width: 100%;
 
 .main_menu a
 {
-  color: #232323;
+  color: white;
   transition: color 0.3s ease;
 }
 
@@ -350,7 +382,7 @@ background-image: url("../images/main-tverd-boiler.jpg");
 
 .intro {
   font-size: 1.6rem;
-padding: 3rem 0;
+padding: 1rem 0;
 }
 
 .intro p{
