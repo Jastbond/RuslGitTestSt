@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:300,400,700|Play:400,700|Rubik:300,400,700&amp;subset=cyrillic");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,500,700|Roboto:300,500,700|Play:500,700|Rubik:300,500,700&amp;subset=cyrillic");
 #menuToggle {
   display: none;
   visibility: hidden;
@@ -121,16 +121,18 @@ html, body {
   font-size: 16px;
   overflow-y: hidden; }
 
+h1 {
+  font-family: "Rubik", "Arial", sans-serif; }
+
 h1, h2, h3, h4 {
   text-align: center;
-  line-height: 150%;
-  font-family: "Rubik", "Arial", sans-serif; }
+  line-height: 150%; }
 
 a {
   color: #3399cc; }
 
 h1 {
-  font-size: 5rem; }
+  font-size: 4rem; }
 
 h2 {
   font-size: 3rem; }
@@ -139,6 +141,13 @@ h2 {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   transition: all .3s; }
+
+.clear:after {
+  content: "";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both; }
 
 .wrapper {
   perspective: 1px;
@@ -153,7 +162,16 @@ h2 {
   font-size: 48px;
   vertical-align: center; }
   .hero h1 {
-    padding-top: 20%; }
+    padding-top: 10%; }
+    .hero h1 span {
+      font-weight: 500;
+      font-family: "Montserrat", "Arial", sans-serif; }
+    .hero h1 img {
+      opacity: .7;
+      display: block;
+      margin: 0 auto;
+      width: 35%;
+      padding: 1rem 0; }
   .hero h1, .hero h2 {
     margin: 0 auto;
     text-shadow: 2px 4px 4px #5E5E5E;
@@ -286,7 +304,8 @@ header.scrol {
 /* === Main CSS === */
 main, footer {
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.8); }
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.6); }
 
 #mouse {
   position: absolute;
@@ -416,7 +435,16 @@ main, footer {
   padding: 1rem 0; }
 
 .intro p {
-  font: 400 1.3rem "Roboto", "Arial", sans-serif; }
+  font: 1.2rem "Roboto", "Arial", sans-serif;
+  text-indent: 4rem; }
+
+.intro ul {
+  padding-left: 2rem; }
+
+.intro li {
+  font: 1.3rem "Roboto", "Arial", sans-serif;
+  list-style-type: disc;
+  padding-bottom: .6rem; }
 
 .callback::after {
   content: " ";
@@ -433,8 +461,7 @@ main, footer {
 .callback {
   position: relative;
   height: 100vh;
-  vertical-align: center;
-  background-color: transparent; }
+  /*  background-color:transparent;*/ }
 
 .callback_wrapper {
   display: flex;
@@ -446,11 +473,12 @@ main, footer {
   content: "";
   position: absolute;
   display: block;
-  background-color: white;
+  background-color: #fff;
   left: -40%;
   height: 100%;
   width: 1000%;
-  z-index: -1; }
+  z-index: -1;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.7); }
 
 .callback_wrapper > div {
   padding: 4rem 0; }
@@ -467,7 +495,11 @@ main, footer {
   .callback_now p:first-child {
     font-size: 1.7rem; }
   .callback_now p:nth-child(2) {
-    font-size: 2rem; }
+    font-size: 2rem;
+    background: #ff6633;
+    color: white;
+    border: 2px #ff6633 solid;
+    border-radius: 10px; }
   .callback_now p:last-child {
     font-size: 1.2rem;
     line-height: 2rem; }
@@ -480,21 +512,20 @@ main, footer {
   float: right;
   line-height: 3rem;
   margin-bottom: .5rem;
-  padding-left: 1rem; }
+  padding-left: 1rem;
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-size: 1rem; }
 
 .callback_form input[type="submit"] {
   line-height: 4rem;
-  background: #ccc;
+  background: #ff6633;
+  color: white;
   border: 0 none;
   cursor: pointer;
+  font-size: 1.5rem;
   -webkit-border-radius: 5px;
-  border-radius: 5px;
+  border-radius: 10px;
   margin-bottom: 0; }
-
-.blog_header {
-  text-align: left;
-  font-size: 2rem;
-  border-bottom: 2px solid #5E5E5E; }
 
 .feedback {
   display: grid;
@@ -502,13 +533,59 @@ main, footer {
   grid-column-gap: 2vw; }
 
 .feedback_post_text {
-  font: 400 1.1rem "Roboto", "Arial", sans-serif; }
+  font: 1.1rem "Roboto", "Arial", sans-serif;
+  font-weight: 300; }
+
+.blog {
+  padding-bottom: 2rem; }
+
+.blog_header {
+  background: url("../images/header_bg.svg") no-repeat left center;
+  background-size: 400px auto;
+  text-align: left;
+  font-size: 2rem;
+  border-bottom: 2px solid #5E5E5E; }
+  .blog_header a {
+    float: right;
+    font-size: 1.2rem;
+    font-weight: 500; }
+
+.blog_post_header {
+  font-size: 1.5rem;
+  text-decoration: underline; }
+  .blog_post_header span {
+    font-style: italic;
+    font-size: 1.3rem;
+    font-weight: 500; }
+
+.article_header_bg {
+  float: left;
+  padding: 0 2rem; }
+
+.blog_post {
+  max-height: 20rem;
+  overflow: hidden;
+  border-bottom: 1px solid black; }
+  .blog_post p {
+    font-family: "Roboto", "Arial", sans-serif;
+    font-weight: 300;
+    font-size: 1.1rem; }
+
+.blog_post img {
+  float: left;
+  padding: 0 1rem 1rem 0;
+  max-width: 25%; }
 
 /* === End of Main CSS === */
 /* === Footer CSS === */
+footer {
+  background: #003366;
+  padding: 20px 0;
+  color: #3399cc; }
+
 .footer_wrapper {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr 1fr 2fr;
   grid-gap: 1rem; }
 
 .footer_logo img {
@@ -516,9 +593,12 @@ main, footer {
 
 .social li {
   display: inline-block; }
+  .social li a {
+    display: block;
+    height: 100%; }
 
 .footer_phone, .footer_mail {
-  padding-left: 4vw;
+  padding-left: 15%;
   font-size: 1.4rem;
   margin: 4px 0;
   display: inline-block;
@@ -530,7 +610,7 @@ main, footer {
   position: absolute;
   width: 12%;
   height: 100%;
-  left: 6%;
+  left: 0;
   top: 4%;
   background: url(../images/icon-phone-40.png) no-repeat;
   -webkit-background-size: contain;
@@ -542,11 +622,47 @@ main, footer {
   position: absolute;
   width: 12%;
   height: 100%;
-  left: 6%;
+  left: 0;
   top: 4%;
   background: url(../images/icon-mail-40.png) no-repeat;
   -webkit-background-size: contain;
   background-size: contain; }
+
+.footer_menu {
+  padding-left: 3rem; }
+  .footer_menu li {
+    padding-bottom: 10px;
+    text-align: left; }
+
+.subscribe_form {
+  position: relative; }
+
+.subscribe_form input {
+  line-height: 50px;
+  width: 100%;
+  font-size: 1.2rem;
+  padding-left: 2rem; }
+
+.footer_form p {
+  font-weight: 500; }
+
+.subscribe_form .subscribe {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 4px;
+  right: 15px;
+  background: url(../images/send_icon_sm.png) no-repeat center center;
+  background-size: contain;
+  cursor: pointer; }
+
+.subscribe_form input[type="submit"] {
+  display: none; }
+
+.copy {
+  text-align: center;
+  font-size: .8rem;
+  font-weight: 300; }
 
 @media only screen and (max-width: 1240px) {
   html, body {
